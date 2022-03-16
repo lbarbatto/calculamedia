@@ -22,7 +22,7 @@ const herois = [
       media = soma / herois[h].notas.length;
     }
     let status = "Indefinido";
-    if (media < 6){
+    if (media < mediaDeCorte){
       status = "Reprovado"
     } else {
       status = "Aprovado"
