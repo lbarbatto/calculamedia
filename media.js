@@ -13,22 +13,26 @@ const herois = [
     }
   ];
 
-  for (let h=0;h<herois.length;h++){
-    let soma = 0;
-    let media = 0;
-    for (let n=0;n<herois[h].notas.length;n++){
-      let nota = herois[h].notas[n];
-      soma += nota;
-      media = soma / herois[h].notas.length;
-    }
-    let status = "Indefinido";
-    if (media < mediaDeCorte){
-      status = "Reprovado"
-    } else {
-      status = "Aprovado"
-    }
-    console.log(`--------- \r\nAluno: ${herois[h].nome} - Disciplina: ${herois[h].disciplina} - Média Final: ${media} - Condição: ${status}\r\n---------`); 
-  }
+function defineMedia() {
+    for (let h=0;h<herois.length;h++){
+      let soma = 0;
+      let media = 0;
+      for (let n=0;n<herois[h].notas.length;n++){
+        let nota = herois[h].notas[n];
+        soma += nota;
+        media = soma / herois[h].notas.length;
+      }
+      let status = "Indefinido";
+      if (media < mediaDeCorte){
+        status = "Reprovado"
+      } else {
+        status = "Aprovado"
+      }
+      console.log(`--------- \r\nAluno: ${herois[h].nome} - Disciplina: ${herois[h].disciplina} - Média Final: ${media} - Condição: ${status}\r\n---------`);  
+    }     
+}
+
+defineMedia(herois)
   
   // console.log("Média: " + mediaDeCorte);
 
